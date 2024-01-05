@@ -69,7 +69,7 @@ If you'd like to contribute to the project, please follow these guidelines:
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-```python
+```bash
 
 Make sure to replace `"kamarina"` with your GitHub username
 ```
