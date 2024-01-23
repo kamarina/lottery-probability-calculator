@@ -1,5 +1,6 @@
 import math
 
+
 def calculate_lottery_probability(total_tickets, winning_tickets, tickets_bought):
     """
     Calculate the probability of winning the lottery.
@@ -58,6 +59,7 @@ def main():
     # Calculate and display the probability
     probability = calculate_lottery_probability(total_tickets, winning_tickets, tickets_bought)
     print(f"The probability of winning with {tickets_bought} tickets is: {round(probability * 100, 2):.2f}%")
+
 
 if __name__ == "__main__":
     main()
