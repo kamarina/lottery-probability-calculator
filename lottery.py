@@ -32,6 +32,18 @@ def calculate_lottery_probability(total_tickets, winning_tickets, tickets_bought
     probability = winning_combinations / total_combinations
     return probability
 
+
+def calculate_lottery_chance(total_tickets, winning_tickets, tickets_bought):
+    """Calculates the probability that any winning ticket is not sold."""
+    unsold_tickets = total_tickets - tickets_bought
+
+    if unsold_tickets <= 0:
+        raise ValueError("All tickets are sold; cannot calculate the probability.")
+
+    probability_not_sold = winning_tickets / unsold_tickets
+    return probability_not_sold
+
+
 def main():
     print("Welcome to the Lottery Probability Calculator!")
 
@@ -39,6 +51,9 @@ def main():
     total_tickets = int(input("Enter the total number of tickets in the lottery: "))
     winning_tickets = int(input("Enter the number of winning tickets: "))
     tickets_bought = int(input("Enter the number of tickets you plan to purchase: "))
+    probability_not_sold = calculate_lottery_chance(total_tickets, winning_tickets, tickets_bought)
+    print(f"\nThe chance that a winning ticket is not sold is: {probability_not_sold:.4f} "
+          f"or {probability_not_sold * 100:.2f}%")
 
     # Calculate and display the probability
     probability = calculate_lottery_probability(total_tickets, winning_tickets, tickets_bought)
